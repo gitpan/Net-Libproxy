@@ -3,12 +3,12 @@
 
 use inc::Module::Install;
 
-name			'Net-Libproxy';
-abstract		'Perl binding for Libproxy';
-author			'Gonéri Le Bouder <goneri@rulezlan.org>';
-license			'Perl';
+name			      'Net-Libproxy';
+abstract		    'Perl binding for Libproxy';
+author			    'Gonéri Le Bouder <goneri@rulezlan.org>';
+license			    'Perl';
 perl_version		'5.008001';
-no_index		directory => 'template';
+no_index		    directory => 'template';
 
 if ($^O ne 'MSWin32') {
 	$lflags = `pkg-config libproxy-1.0 --libs`;

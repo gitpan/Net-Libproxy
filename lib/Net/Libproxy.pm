@@ -1,7 +1,7 @@
 package Net::Libproxy;
 use 5.008000;
 use warnings;
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 require Exporter;
 require DynaLoader;
