@@ -1,0 +1,9 @@
+Changes
+Libproxy.xs
+Makefile.PL
+MANIFEST
+README
+typemap
+t/Libproxy.t
+lib/Net/Libproxy.pm
+META.yml                                 Module meta-data (added by MakeMaker)
