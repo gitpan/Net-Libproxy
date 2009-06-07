@@ -1,6 +1,4 @@
-Revision history for Perl extension Net::Libproxy.
 
-0.01  Wed Dec 10 14:16:35 2008
-	- original version; created by h2xs 1.23 with options
-		-A -n Foo
 
+0.01
+  [71209ea] initial import (2009-06-07 03:59:48 +0200)

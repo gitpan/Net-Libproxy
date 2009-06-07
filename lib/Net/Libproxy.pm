@@ -1,7 +1,7 @@
 package Net::Libproxy;
 use 5.008000;
 use warnings;
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 require Exporter;
 require DynaLoader;
@@ -38,6 +38,10 @@ Net::Libproxy - Perl binding for libproxy ( http://code.google.com/p/libproxy/  
   $p = new Net::Libproxy;
   $proxies = $p->getProxy('http://code.google.com/p/libproxy/');
 
+  foreach my $proxy (@$proxies) {
+    print $proxy."\n";
+  }
+
 =head1 DESCRIPTION
 
 libproxy is a lightweight library which makes it easy to develop
@@ -45,12 +49,15 @@ applications proxy-aware with a simple and stable API.
 
 =head2 EXPORT
 
-proxy_factory_new, proxy_factory_get_proxies, new and getProxy are exported.
+These two functions are also exported.
+proxy_factory_new()
+proxy_factory_get_proxies()
 
 =head1 SEE ALSO
 
 Libproxy homepage: http://code.google.com/p/libproxy/
-
+Net::Libproxy on Gitorious: http://gitorious.org/net-libproxy
+You can also read proxy.h and Net/Libproxy.pm
 
 =head1 AUTHOR
 

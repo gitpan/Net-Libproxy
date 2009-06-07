@@ -1,19 +1,24 @@
-use 5.008000;
-use ExtUtils::MakeMaker;
-# See lib/ExtUtils/MakeMaker.pm for details of how to influence
-# the contents of the Makefile that is written.
-WriteMakefile(
-    NAME              => 'Net-Libproxy',
-    VERSION_FROM      => 'lib/Net/Libproxy.pm', # finds $VERSION
-    PREREQ_PM         => {}, # e.g., Module::Name => 1.1
-    ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
-      (ABSTRACT_FROM  => 'lib/Net/Libproxy.pm', # retrieve abstract from module
-       AUTHOR         => 'Goneri Le Bouder <goneri@rulezlan.org>') : ()),
-    LIBS              => ['-lproxy'], # e.g., '-lm'
-    DEFINE            => '', # e.g., '-DHAVE_SOMETHING'
-    INC               => '-I.', # e.g., '-I. -I/usr/include/other'
-	# Un-comment this if you add C files to link with later:
-    # OBJECT            => '$(O_FILES)', # link all the C files too
-);
+# Makefile.PL for Perl module WWW::Curl
+# Check out the README file for more information.
 
+use inc::Module::Install;
+
+name			'Net-Libproxy';
+abstract		'Perl binding for Libproxy';
+author			'Gonéri Le Bouder <goneri@rulezlan.org>';
+license			'Perl';
+perl_version		'5.008001';
+no_index		directory => 'template';
+
+if ($^O ne 'MSWin32') {
+	$lflags = `pkg-config libproxy-1.0 --libs`;
+}
+
+# Let Module::Install generate META.yml and other necessary files.
+WriteMakefile(
+    'NAME'         => 'Net::Libproxy',
+    'VERSION_FROM' => 'lib/Net/Libproxy.pm',      # finds $VERSION
+    'LIBS'         => "$ldflags $lflags",        # e.g., '-lm'
+    'INC'          => "."
+);
 

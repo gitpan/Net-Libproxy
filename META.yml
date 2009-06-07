@@ -1,13 +1,23 @@
---- #YAML:1.0
-name:                Net-Libproxy
-version:             0.01
-abstract:            Perl binding for libproxy ( http://code.google.com/p/libproxy/  )
-license:             ~
-author:              
-    - Goneri Le Bouder <goneri@rulezlan.org>
-generated_by:        ExtUtils::MakeMaker version 6.42
-distribution_type:   module
-requires:     
+---
+abstract: 'Perl binding for Libproxy'
+author:
+  - 'Gonéri Le Bouder <goneri@rulezlan.org>'
+build_requires:
+  ExtUtils::MakeMaker: 6.42
+configure_requires:
+  ExtUtils::MakeMaker: 6.42
+distribution_type: module
+generated_by: 'Module::Install version 0.90'
+license: Perl
 meta-spec:
-    url:     http://module-build.sourceforge.net/META-spec-v1.3.html
-    version: 1.3
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+module_name: Net::Libproxy
+name: Net-Libproxy
+no_index:
+  directory:
+    - inc
+    - t
+requires:
+  perl: 5.8.1
+version: 0.02
